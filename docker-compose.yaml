@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    container_name: microservice-notion-database
+    command: uvicorn app.main:app --host 0.0.0.0 --reload --port 8000
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/app
